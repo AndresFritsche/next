@@ -16,7 +16,7 @@ const Navbar = () => {
         })}
         <div className='text-3xl flex gap-5'>
             {social.map((socialIcon) => {
-                const {id, url, icon, description} = socialIcon
+                const {id, url, icon,} = socialIcon
                 return <a key={id} href={url} className='w-1/2'>{icon}</a>
             })}
         </div>
