@@ -7,13 +7,13 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <nav className='w-screen h-24 flex justify-between items-center bg-white shadow-md'>
-    <div className='flex items-center pt-4 gap-4 ml-10'>
+    <nav className='w-screen h-16 flex justify-between items-center bg-white shadow-md fixed p-8'>
+    <div className='flex items-center pt-4 gap-4 ml-12'>
         <Image src="/Next_Design__1_-removebg-preview.png" width={230} height={50} alt="logo" />
     </div>
 
-    {/* Navigation Links */}
-    <div className='flex gap-6 items-center'>
+  
+    <div className='flex gap-6 items-center '>
         {links.map((link) => {
             const { id, url, text } = link;
             return (
