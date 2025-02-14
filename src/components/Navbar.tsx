@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { links, social } from '../app/data'
 import Image from 'next/image'
 
@@ -7,7 +8,7 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <nav className='w-screen h-16 flex justify-between items-center bg-white shadow-md fixed p-8'>
+    <nav className='w-screen h-16 flex justify-between items-center shadow-md fixed p-8'>
     <div className='flex items-center pt-4 gap-4 ml-12'>
         <Image src="/Next_Design__1_-removebg-preview.png" width={230} height={50} alt="logo" />
     </div>
@@ -17,13 +18,13 @@ const Navbar = () => {
         {links.map((link) => {
             const { id, url, text } = link;
             return (
-                <a
+                <Link
                     key={id}
                     href={url}
                     className='font-bold text-lg hover:bg-slate-300 rounded-lg px-4 py-2 transition duration-300 ease-in-out'
                 >
                     {text}
-                </a>
+                </Link>
             );
         })}
     </div>
