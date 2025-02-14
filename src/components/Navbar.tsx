@@ -6,6 +6,8 @@ import Image from 'next/image'
 
 
 
+
+
 const Navbar = () => {
   return (
     <nav className='w-screen h-16 flex justify-between items-center bg-white shadow-md fixed p-8'>
@@ -28,8 +30,6 @@ const Navbar = () => {
             );
         })}
     </div>
-
-    {/* Social Icons */}
     <div className='flex gap-5 text-4xl px-8 text-[--primary]'>
         {social.map((socialIcon) => {
             const { id, url, icon } = socialIcon;
