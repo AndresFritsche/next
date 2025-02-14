@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <nav className='w-screen h-16 flex justify-between items-center shadow-md fixed p-8'>
+    <nav className='w-screen h-16 flex justify-between items-center bg-white shadow-md fixed p-8'>
     <div className='flex items-center pt-4 gap-4 ml-12'>
         <Image src="/Next_Design__1_-removebg-preview.png" width={230} height={50} alt="logo" />
     </div>
