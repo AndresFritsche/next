@@ -29,7 +29,7 @@ const Navbar = () => {
     </div>
 
     {/* Social Icons */}
-    <div className='flex gap-5 text-3xl text-[--primary]'>
+    <div className='flex gap-5 text-4xl px-8 text-[--primary]'>
         {social.map((socialIcon) => {
             const { id, url, icon } = socialIcon;
             return (
