@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <nav className=' flex justify-evenly items-center px-5 py-5 '>
+    <nav className='w-screen flex  justify-evenly items-center px-5 py-2 '>
         
         <Image src="/Next_Design__1_-removebg-preview.png" width={200} height={150} alt="image" className=''/>
         {links.map((link) => {
@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className='text-3xl flex gap-5'>
             {social.map((socialIcon) => {
                 const {id, url, icon,} = socialIcon
-                return <a key={id} href={url} className='w-1/2'>{icon}</a>
+                return <a key={id} href={url} className=''>{icon}</a>
             })}
         </div>
     </nav>
