@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="hidden md:flex gap-8 items-center">
         {links.map((link) => {
           const { id, url, text } = link;
-          const isActive = pathname === url; // Check if the link is active
+          const isActive = pathname === url; // 
 
           return (
             <Link
