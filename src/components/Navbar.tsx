@@ -11,29 +11,29 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
 
   return (
-    <nav className="w-screen h-16 flex justify-between items-center bg-white shadow-md fixed px-8 md:px-24 z-50">
+    <nav className="w-screen h-16 flex justify-center items-center bg-white shadow-md md:px-24 z-50">
       {/* Logo */}
       <div className="flex items-center">
-        <Image
-          src="/Next_Design__1_-removebg-preview.png"
-          width={200}
-          height={50}
-          alt="logo"
-          className="w-40 md:w-48"
-        />
+      <Image
+  src="/c83e4191-7005-44a2-9b80-e3f0d237650f_removalai_preview.png"
+  width={300} // 
+  height={650} // 
+  alt="logo"
+  className="object-contain w-full h-20 mb-1 sm:h-32 md:h-40 lg:h-36 transition-all duration-300 hover:scale-105"
+/>
       </div>
 
       
-      <div className="hidden md:flex gap-8 items-center">
+      <div className="hidden md:flex gap-8 items-center"> 
         {links.map((link) => {
           const { id, url, text } = link;
-          const isActive = pathname === url; // 
+          const isActive = pathname === url; 
 
           return (
             <Link
               key={id}
               href={url}
-              className={`font-semibold text-lg hover:bg-slate-200 rounded-lg px-4 py-2 transition duration-300 ease-in-out ${
+              className={`font-semibold text-lg hover:bg-slate-200 rounded-lg px-4 py-2 transition duration-300 ease-in-out transition-all duration-300 hover:scale-105 ${
                 isActive ? "text-indigo-600 bg-slate-100" : "text-gray-700"
               }`}
             >
@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-4 p-4">
             {links.map((link) => {
               const { id, url, text } = link;
-              const isActive = pathname === url; // Check if the link is active
+              const isActive = pathname === url; // 
 
               return (
                 <Link
@@ -77,7 +77,7 @@ const Navbar = () => {
                   className={`font-semibold text-lg hover:bg-slate-200 rounded-lg px-4 py-2 transition duration-300 ease-in-out ${
                     isActive ? "text-indigo-600 bg-slate-100" : "text-gray-700"
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
+                  onClick={() => setIsMobileMenuOpen(false)} // 
                 >
                   {text}
                 </Link>
