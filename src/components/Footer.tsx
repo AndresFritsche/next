@@ -1,107 +1,85 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import Link from "next/link";
+import Image from "next/image";
+import { footerData } from "../app/data";
 
 const Footer = () => {
+  const { logo, description, links, socialMedia, contactInfo } = footerData;
+
   return (
-    <footer className="bg-gray-50 border-t">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div className="xl:grid xl:grid-cols-2 xl:gap-8">
-          <div className="space-y-8 xl:col-span-1">
-            <Image
-              className=""
-              src="/Next_Design__1_-removebg-preview.png"
-              alt="Company name"
-              width={230}
-              height={220}
-            />
-            <p className="text-gray-500 text-base">
-              Creating stunning digital experiences for businesses worldwide.
-            </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                <span className="sr-only">Facebook</span>
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                <span className="sr-only">Instagram</span>
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </div>
-          </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0">
-            <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                Services
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <Link href="/services/web-design" className="text-base text-gray-500 hover:text-gray-900">
-                    Web Design
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/development" className="text-base text-gray-500 hover:text-gray-900">
-                    Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/seo" className="text-base text-gray-500 hover:text-gray-900">
-                    SEO
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/branding" className="text-base text-gray-500 hover:text-gray-900">
-                    Branding
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                Company
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <Link href="/about" className="text-base text-gray-500 hover:text-gray-900">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-base text-gray-500 hover:text-gray-900">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-base text-gray-500 hover:text-gray-900">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/careers" className="text-base text-gray-500 hover:text-gray-900">
-                    Careers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Logo and Description */}
+        <div className="space-y-4">
+          <Image
+            src={logo.src}
+            alt={logo.alt}
+            width={logo.width}
+            height={logo.height}
+            className="w-40"
+          />
+          <p className="text-gray-400">{description}</p>
         </div>
-        <div className="mt-12 border-t border-gray-200 pt-8">
-          <p className="text-base text-gray-400 xl:text-center">
-            &copy; {new Date().getFullYear()} Your Agency Name. All rights reserved.
-          </p>
+
+        {/* Quick Links */}
+        {links.map((section, index) => (
+          <div key={index} className="space-y-4">
+            <h3 className="text-lg font-semibold">{section.title}</h3>
+            <ul className="space-y-2">
+              {section.items.map((item, i) => (
+                <li key={i}>
+                  <Link
+                    href={item.url}
+                    className="text-gray-400 hover:text-white transition duration-300"
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        {/* Contact Info */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Contact Us</h3>
+          <p className="text-gray-400">{contactInfo.email}</p>
+          <p className="text-gray-400">{contactInfo.phone}</p>
+          <p className="text-gray-400">{contactInfo.address}</p>
+        </div>
+
+        {/* Social Media */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Follow Us</h3>
+          <div className="flex space-x-4">
+            {socialMedia.map((social, index) => (
+              <Link
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition duration-300"
+              >
+                <Image
+                  src={social.icon}
+                  alt={social.name}
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-    </footer>
-  )
-}
 
-export default Footer
+      {/* Footer Bottom */}
+      <div className="text-center mt-8 pt-8 border-t border-gray-800">
+        <p className="text-gray-400">
+          &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
