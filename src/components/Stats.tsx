@@ -1,21 +1,22 @@
+"use client";
 import { statsData } from "@/app/data";
+import { motion } from "framer-motion";
 
 const Stats = () => {
   return (
-    <section className="py-24 bg-white sm:py-16 lg:py-20">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{duration: 1}}
+      viewport={{ margin:"-200px", once:true }}
+      className="bg-white sm:py-16 lg:py-40"
+    >
       <div className="px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Title and Description */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
             Our Journey in Numbers
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            With over 4 years of experience, a dedicated team of 37+
-            professionals, and 3,274 successful projects delivered, we pride
-            ourselves on achieving a 98% customer success rate. Our commitment
-            to excellence drives us to deliver exceptional results for every
-            client.
-          </p>
         </div>
 
         {/* Grid Section */}
@@ -55,7 +56,7 @@ const Stats = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default Stats;

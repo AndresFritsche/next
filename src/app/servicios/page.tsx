@@ -30,7 +30,7 @@ export default function Servicios() {
     
                   <div className="text-start">
                     <h3 className="text-2xl font-bold text-white">{title}</h3>
-                    <p className="text-lg text-[--secondary] mt-4 text-white/80">
+                    <p className="text-lg text-white mt-4">
                       {text}
                     </p>
                   </div>
