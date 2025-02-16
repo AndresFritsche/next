@@ -1,12 +1,20 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { footerData } from "../app/data";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const { logo, description, links, socialMedia, contactInfo } = footerData;
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ margin: "-200px", once: true }}
+      className="bg-gray-900 text-white py-12"
+    >
       <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and Description */}
         <div className="space-y-4">
@@ -51,23 +59,26 @@ const Footer = () => {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Follow Us</h3>
           <div className="flex space-x-4">
-            {socialMedia.map((social, index) => (
-              <Link
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition duration-300"
-              >
-                <Image
-                  src={social.icon}
-                  alt={social.name}
-                  width={24}
-                  height={24}
-                  className="w-6 h-6"
-                />
-              </Link>
-            ))}
+            {socialMedia.map((social, index) => {
+              const { name, icon, url } = social;
+              return (
+                <Link
+                  key={index}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition duration-300"
+                >
+                  <Image
+                    src={icon}
+                    alt={name}
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -75,10 +86,11 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="text-center mt-8 pt-8 border-t border-gray-800">
         <p className="text-gray-400">
-          &copy; 2018-{new Date().getFullYear()} Next Design. All rights reserved.
+          &copy; 2018-{new Date().getFullYear()} Next Design. All rights
+          reserved.
         </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
