@@ -8,7 +8,7 @@ export default function Servicios() {
             <h2 className="text-4xl font-bold text-white">
               Nuestros Servicios
             </h2>
-            <p className="text-xl text-[--secondary] mt-4 max-w-2xl mx-auto">
+            <p className="text-xl text-white mt-4 max-w-2xl mx-auto">
               Ofrecemos una amplia gama de servicios para ayudarte a alcanzar tus
               objetivos.
             </p>
