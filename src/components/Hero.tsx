@@ -1,16 +1,17 @@
 "use client";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "motion/react";
+import { easeIn, easeInOut } from "motion";
 
 const Hero = () => {
   return (
     <motion.section
-      initial={{ x: "10%", opacity: 0 }}
+      initial={{ x: "5%", opacity: 0 }}
       animate={{
         x: "calc(50vw - 50%)",
         opacity: 1,
-        transition: { duration: 1.3 },
       }}
+      transition={{ duration: 1.1 }}
       className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24"
     >
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
