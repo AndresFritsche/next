@@ -1,7 +1,6 @@
 "use client";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "motion/react";
-import { easeIn, easeInOut } from "motion";
 
 const Hero = () => {
   return (
@@ -11,8 +10,8 @@ const Hero = () => {
         x: "calc(50vw - 50%)",
         opacity: 1,
       }}
-      transition={{ duration: 1.1 }}
-      className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24"
+      transition={{ duration: 0.5 }}
+      className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-48"
     >
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
