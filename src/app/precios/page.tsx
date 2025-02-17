@@ -5,7 +5,7 @@ export default function page() {
 <section className="py-10 bg-white sm:py-16 lg:py-24">
     <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Pricing & Plans</h2>
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Precios y planes</h2>
             <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.</p>
         </div>
 
@@ -108,7 +108,7 @@ export default function page() {
 
             <div className="overflow-hidden bg-white border-2 border-gray-100 rounded-md">
                 <div className="p-8 xl:px-12">
-                    <h3 className="text-base font-semibold text-purple-600">Exclusive</h3>
+                    <h3 className="text-base font-semibold text-purple-600">Empresarial</h3>
                     <p className="text-5xl font-bold text-black mt-7">$79</p>
                     <p className="mt-3 text-base text-gray-600">One-time payment</p>
 

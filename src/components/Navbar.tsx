@@ -34,7 +34,7 @@ const Navbar = () => {
               <Link
                 key={id}
                 href={url}
-                className={`font-semibold text-lg hover:bg-slate-200 rounded-lg px-4 py-2 transition duration-300 ease-in-out transition-all duration-300 hover:scale-105 ${
+                className={`font-semibold text-lg hover:bg-slate-200 rounded-lg px-4 py-2 ease-in-out transition-all duration-300 hover:scale-105 ${
                   isActive ? "text-indigo-600 bg-slate-100" : "text-gray-700"
                 }`}
               >
