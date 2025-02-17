@@ -11,7 +11,7 @@ const Footer = () => {
     <motion.footer
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.3 }}
       viewport={{ margin: "-200px", once: true }}
       className="bg-gray-900 text-white py-12"
     >
@@ -69,13 +69,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition duration-300"
                 >
-                  <Image
-                    src={icon}
-                    alt={name}
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                  />
+                  {icon}
                 </Link>
               );
             })}
